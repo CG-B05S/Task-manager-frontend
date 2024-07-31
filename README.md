@@ -120,6 +120,14 @@ cd task-manager-backend
 npm install
 npm start
 ```
+### Running Tests
+
+To run the tests for the frontend application, use the following command:
+
+```bash
+npm test
+```
+
 Contributing
 ------------
 
