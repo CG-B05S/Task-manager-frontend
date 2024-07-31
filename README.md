@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# Task Manager Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
 
-## Available Scripts
+This Task Manager application is a full-stack project that allows users to manage their tasks efficiently. Users can create, read, update, and delete tasks, as well as authenticate using Google OAuth or register and log in with email and password. The application is built using modern web development technologies and follows best practices for code organization and maintainability.
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+### Frontend
+- **React**: JavaScript library for building user interfaces
+- **Tailwind CSS**: Utility-first CSS framework
+- **Axios**: Promise-based HTTP client for the browser
+- **React Router**: Declarative routing for React
+- **React DnD**: Drag-and-drop for React
+- **Jest**: JavaScript testing framework
+- **React Testing Library**: Simple and complete React DOM testing utilities
+- **Netlify**: Hosting service for static websites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Backend
+- **Node.js**: JavaScript runtime built on Chrome's V8 JavaScript engine
+- **Express**: Web framework for Node.js
+- **MongoDB**: NoSQL database
+- **Mongoose**: MongoDB object modeling for Node.js
+- **Passport**: Authentication middleware for Node.js
+- **JWT**: JSON Web Tokens for authentication
+- **Render**: Cloud platform for hosting web applications
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
+- User authentication with Google OAuth
+- User registration and login with email and password
+- Error handling for user-friendly messages in the client
+- Create, read, update, and delete tasks
+- Drag-and-drop task management
+- Responsive design
 
-### `npm test`
+Project Structure
+-----------------
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend
 
-### `npm run build`
+-   `index.js`: Entry point of the backend server
+-   `config/passport.js`: Passport configuration for Google OAuth
+-   `controllers/`: Contains authentication and task controllers
+-   `middleware/auth.js`: Middleware for authentication
+-   `models/`: Contains MongoDB models for User and Task
+-   `routes/`: Defines API routes for authentication and tasks
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   `src/`: Contains the source code of the React application
+-   `src/components/`: Contains React components
+-   `src/pages/`: Contains React pages
+-   `src/axiosInstance.js`: Axios instance configuration
+-   `src/setupTests.js`: Jest setup file
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Error Handling
+--------------
 
-### `npm run eject`
+The application handles various errors gracefully, providing user-friendly messages to help users understand what went wrong:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-   **Registration Errors**: Handles errors such as invalid email, weak passwords, and existing email accounts.
+-   **Login Errors**: Provides feedback for incorrect credentials.
+-   **Task Management Errors**: Informs users when task creation, updating, or deletion fails.
+-   **Google OAuth Errors**: Manages errors during the OAuth process and informs users accordingly.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Deployment
+----------
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The application is deployed on:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-   **Frontend**: Netlify
+-   **Backend**: Render
 
-## Learn More
+## Live Demo
+Access the live application: [Task Manager](https://task-manager-cg.netlify.app/home)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
+- Node.js and npm installed on your local machine
+- MongoDB database
 
-### Code Splitting
+### Clone the backend code Repository
+```bash
+git clone https://github.com/CG-B05S/task-manager-backend.git
+cd task-manager-backend
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+### Setup Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Create a `.env` file in the root directory of your backend and add the following environment variables:
+```bash
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+SESSION_SECRET=your_session_secret
+```
 
-### Making a Progressive Web App
+### Install Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### Backend
 
-### Advanced Configuration
+```bash
+npm install
+node index.js
+```
+### Clone the Frontend Repository
+```bash
+git clone https://github.com/CG-B05S/task-manager-backend.git
+cd task-manager-backend
+```
+### Install Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### Backend
 
-### Deployment
+```bash
+npm install
+npm start
+```
+Contributing
+------------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you have suggestions or improvements, please feel free to open an issue or create a pull request.
